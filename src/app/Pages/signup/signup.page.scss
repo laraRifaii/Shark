@@ -1,0 +1,238 @@
+ion-content {
+    --background: rgb(243, 242, 242);
+  }
+  .toolbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px 0 4px 10px;
+  }
+  .back-btn {
+    width: 20px;
+    height: 25px;
+  }
+  .title {
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .notification {
+    width: 20px;
+    height: 20px;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    margin: 20px 2px 0px 30px;
+  }
+  .Qr {
+    width: 20px;
+    height: 20px;
+  }
+  .paragraph {
+    margin: 5px 30px 10px 30px;
+    font-size: 11px;
+    opacity: 0.7;
+  }
+  .container2 {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 15px 30px 0px 30px;
+  }
+  .username {
+    opacity: 0.6;
+    line-height: 1;
+    font-size:13px;
+  }
+  
+  .eye-icon {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .forgot-password {
+    text-align: right;
+    font-size: 10px;
+    color: #5f5f61;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-right: 12px;
+  }
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .form-button {
+    --background: rgba(46, 53, 72, 1);
+    --color: white;
+    --padding-start: 30px;
+    --padding-end: 30px;
+    font-size: 12px;
+    border: none;
+    border-radius: 5px;
+  }
+  ion-input.custom {
+    --background: white;
+    --color: #888787;
+    --placeholder-opacity: 0.5;
+    --placeholder-font-size: 10px;
+    font-size:10px;
+    border-radius: 10px;
+    --border-radius: 10px;
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+    --padding-end: 10px;
+    --padding-start: 10px;
+   
+    box-shadow: 4px 4px rgb(231, 227, 227);
+    height: 40px;
+  }
+
+  .account-text {
+    font-size: 12px;
+    opacity: 0.8;
+    margin-bottom:20px;
+  }
+  .signin-text {
+    font-size: 12px;
+    color: rgb(134, 179, 197);
+  }
+  .signin-text:active{
+    text-decoration: underline;
+  }
+  .space{
+    margin-bottom:16px;
+  }
+  p{
+    font-size:10px;
+    margin:9px;
+  }
+  .login{
+    color:rgba(46, 53, 72, 1);
+    font-weight: 900;
+    font-size:12px;
+  }
+  @media (min-width: 1024px) {
+    /* Styles for larger tablets like iPad Pro */
+    .back-btn {
+      width: 75px;
+      height: 75px;
+      padding: 5px;
+    }
+    .notification {
+      margin-right: 20px;
+      width: 50px;
+      height: 50px;
+    }
+    .container {
+      display: flex;
+      align-items: center;
+      margin: 50px 2px 0px 380px;
+
+    }
+    .Qr {
+      width: 90px;
+      height: 90px;
+    }
+    .title {
+      font-size: 90px;
+      line-height: 1.5;
+    }
+    .paragraph {
+      
+      margin: 5px 100px 10px 380px;
+      font-size: 60px;
+      opacity: 0.6;
+    }
+    .container2 {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 40px 20px 20px 25px;
+      width: 70vw;
+      justify-content: center;
+    }
+    .username {
+      font-size: 80px;
+      opacity: 0.6;
+      line-height: 2;
+    }
+    .password {
+      font-size: 80px;
+      margin-top: 10px;
+      margin-bottom: -5px;
+      opacity: 0.6;
+      line-height: 2;
+    }
+    .password-container {
+      margin-top: 10px;
+    }
+  
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .eye-icon {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .forgot-password {
+      text-align: right;
+      font-size: 60px;
+      color: #5f5f61;
+      text-decoration: none;
+      margin-top: 5px;
+      margin-right: 12px;
+    }
+    ion-input.custom {
+      --background: white;
+      --color: #888787;
+      --placeholder-color: #555252;
+      --placeholder-opacity: 0.5;
+      --placeholder-font-size: 60px;
+      --border-radius: 50px;
+      font-size: 60px;
+      border-radius: 30px;
+      box-shadow: 10px 10px rgb(218, 214, 214);
+      height: 160px;
+    }
+    .btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .login-button {
+      --background: rgba(46, 53, 72, 1);
+      --color: white;
+      --padding-start: 160px;
+      --padding-end: 160px;
+      border: none;
+      border-radius: 5px;
+      font-size: 70px;
+      margin-top: 50px;
+    }
+    .account-text {
+      font-size: 60px;
+      opacity: 0.8;
+    }
+    .signin-text {
+      font-size: 60px;
+      color: rgb(134, 179, 197);
+    }
+    .caution {
+      font-size: 55px;
+    }
+    .login{
+      color:rgba(46, 53, 72, 1);
+      font-weight: bold;
+    }
+  }

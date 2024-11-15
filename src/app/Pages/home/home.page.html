@@ -1,0 +1,188 @@
+<app-side-menu></app-side-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button>
+          <ion-img src="/../assets/icons/Side Menu.png" alt="" class="side-menu" />
+        </ion-menu-button>
+      </ion-buttons>
+      <ion-buttons slot="start">
+        <!-- if (!isUserLoggedIn ) routerLink="/login"  else alert('You are already logged in, welcome username ')-->
+        <ng-container *ngIf="(userIsLoggedIn$ | async)!==null ;else loading">
+          <div *ngIf="userIsLoggedIn$ | async else elseBlock">
+            <ion-button routerLink="/profile">
+              <div class="signed-IN">
+                <img
+                  class="img2-profile"
+                  src="/../assets/icons/icon2.png"
+                  alt="profile"
+                />
+                <div class="title">Hello , {{username}}</div>
+              </div>
+            </ion-button>
+          </div>
+          <ng-template #elseBlock>
+            <ion-button routerLink="/login">
+              <div class="Not-signed-IN">
+                <ion-img
+                  class="img1-profile"
+                  src="/../assets/icons/icon1.png"
+                  alt="profile"
+                >
+                </ion-img>
+                <div class="title">Hello, User</div>
+                <!-- <span>Hello, User</span> -->
+              </div>
+            </ion-button>
+          </ng-template>
+        </ng-container>
+
+        <ng-template #loading>
+          <ion-spinner></ion-spinner>
+        </ng-template>
+      </ion-buttons>
+
+      <!-- if (!isUserLoggedIn) 'Welcome, name' else 'Welcome, user' -->
+
+      <ion-buttons slot="end">
+        <ion-button>
+          <div class="notification">
+            <ion-img
+              src="/../assets/icons/Notification.png"
+              alt="notification"
+            ></ion-img>
+          </div>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <!-- Swiper component -->
+    <app-swiper></app-swiper>
+
+    <!-- if user is logged in -->
+    <ng-container *ngIf="(userIsLoggedIn$ | async) !==null; else loading">
+      <div *ngIf="userIsLoggedIn$ | async; else notLoggedIn">
+        <div class="main-title">
+          <ion-img class="QR" src="\..\assets\icons\QR ICON.png"></ion-img>
+          <div class="Overview-title"><b>Menu</b></div>
+        </div>
+        <ion-list>
+          <ion-item *ngFor="let item of menuItems" button detail="true">
+            <ion-label routerLink="/manager">
+              <h3>{{ item.title }}</h3>
+              <p>
+                Date Created: {{ item.dateCreated }} | Due Date: {{ item.dueDate
+                }}
+              </p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+
+        <div class="main-title2">
+          <ion-img class="QR" src="\..\assets\icons\QR ICON.png"></ion-img>
+          <div class="Overview-title"><b>Qr Code</b></div>
+        </div>
+        <ion-list>
+          <ion-item *ngFor="let qr of qrItems" button detail="true">
+            <ion-label>
+              <h3>{{ qr.title }}</h3>
+              <p>
+                Type: {{ qr.type }} | Date Created: {{ qr.dateCreated }} | Due
+                Date: {{ qr.dueDate }}
+              </p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+
+      <!-- if user isn't logged in -->
+      <ng-template #notLoggedIn>
+        <!-- first section -->
+        <div class="main-title">
+          <ion-img class="QR" src="\..\assets\icons\QR ICON.png"></ion-img>
+          <div class="Overview-title">Overview</div>
+        </div>
+        <p class="paragraph">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint ipsa temporibus, in molestiae porro perspiciatis .
+        </p>
+        <div class="img1">
+          <ion-img src="\..\assets\images\home image2.png"></ion-img>
+        </div>
+
+        <!-- second section -->
+        <div class="main-title2">
+          <ion-img class="QR" src="\..\assets\icons\QR ICON.png"></ion-img>
+          <div class="Overview-title">Digital Menu</div>
+        </div>
+        <p class="paragraph">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint ipsa temporibus, in molestiae porro perspiciatis .
+        </p>
+
+        <div class="buttons">
+          <ion-button
+            class="btn"
+            size="default"
+            style="
+              --background: rgba(46, 53, 72, 1);
+              --background-activated: gray;
+            "
+          >
+            <ion-icon
+              slot="start"
+              name="logo-whatsapp"
+              class="whatsapp"
+            ></ion-icon>
+            Order Now
+          </ion-button>
+          <ion-button
+            class="btn"
+            [disabled]="true"
+            style="--background: rgb(44, 81, 113)"
+            >Get Quotation</ion-button
+          >
+        </div>
+        <div class="img1">
+          <ion-img src="\..\assets\images\home image2_1.png"></ion-img>
+        </div>
+        <!-- Third Section -->
+        <div class="main-title2">
+          <ion-img class="QR" src="\..\assets\icons\QR ICON.png"></ion-img>
+          <div class="Overview-title Qr-title">Qr Code</div>
+        </div>
+        <p class="paragraph">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint ipsa temporibus, in molestiae porro perspiciatis .
+        </p>
+        <div class="buttons">
+          <ion-button
+            class="btn"
+            size="default"
+            style="
+              --background: rgba(46, 53, 72, 1);
+              --background-activated: gray;
+            "
+          >
+            <ion-icon
+              slot="start"
+              name="logo-whatsapp"
+              class="whatsapp"
+            ></ion-icon>
+            Order Now
+          </ion-button>
+          <ion-button
+            class="btn"
+            [disabled]="true"
+            style="--background: rgb(44, 81, 113)"
+            >Get Quotation</ion-button
+          >
+        </div>
+      </ng-template>
+    </ng-container>
+    <ng-template #loading>
+      <ion-spinner></ion-spinner>
+    </ng-template>
+  </ion-content>
+</div>

@@ -1,0 +1,157 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="toolbar">
+      <ion-buttons slot="start">
+        <ion-button routerLink="/home">
+          <ion-img
+            class="back-btn"
+            src="\..\assets\icons\back Icon.png"
+          ></ion-img>
+        </ion-button>
+        <div class="title">Create Your Account</div>
+      </ion-buttons>
+    </div>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-img
+          class="notification"
+          src="/../assets/icons/Notification.png"
+        ></ion-img>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-img
+    src="\..\assets\images\LogIn.jpg"
+    style="margin-top: -15px"
+  ></ion-img>
+
+  <div class="container">
+    <ion-img class="Qr" src="\..\assets\icons\QR ICON.png"></ion-img>
+    <div class="title">Create Your Account</div>
+  </div>
+  <p class="paragraph">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio sequi ea.
+  </p>
+
+  <div class="main-container">
+    <div class="container2">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" autocomplete="off">
+
+        <div class="space">
+          <label for="Name" class="username">Name</label>
+          <ion-input
+            placeholder="Enter Your Name.."
+            class="custom"
+            type="text"
+            autocomplete="new-name"
+            formControlName="name"
+            [attr.data-autofill-backup]="'username'"
+          ></ion-input>
+          <ion-text
+            color="danger"
+            *ngIf="loginForm.get('name')?.errors && loginForm.get('name')?.touched"
+          >
+            <p
+              class="caution"
+              *ngIf="loginForm.get('name')?.errors?.['required']"
+            >
+              Username is required.
+            </p>
+            <p
+              class="caution"
+              *ngIf="loginForm.get('name')?.errors?.['hasSpaces']"
+            >
+              Spaces are not allowed in username.
+            </p>
+          </ion-text>
+        </div>
+        <div class="space">
+          <label for="Name" class="username">Restaurant Name</label>
+          <ion-input
+            placeholder="Enter Your Restaurant Name.."
+            class="custom"
+            type="text"
+            autocomplete="new-name"
+            formControlName="restaurant_name"
+            [attr.data-autofill-backup]="'restaurant_name'"
+          ></ion-input>
+          <ion-text
+            color="danger"
+            *ngIf="loginForm.get('restaurant_name')?.errors && loginForm.get('restaurant_name')?.touched"
+          >
+            <p
+              class="caution"
+              *ngIf="loginForm.get('restaurant_name')?.errors?.['required']"
+            >
+              Restaurant Name is required.
+            </p>
+            <p
+              class="caution"
+              *ngIf="loginForm.get('restaurant_name')?.errors?.['hasSpaces']"
+            >
+              Spaces are not allowed in username.
+            </p>
+          </ion-text>
+        </div>
+
+        <div class="space">
+          <label for="number" class="username">Phone</label>
+          <ion-input
+            class="custom"
+            placeholder="Enter Your Phone Number.."
+            type="number"
+            autocomplete="new-name"
+            formControlName="phone"
+          ></ion-input>
+
+          <ion-text
+            color="danger"
+            *ngIf="loginForm.get('phone')?.errors && loginForm.get('phone')?.touched"
+          >
+            <p
+              class="caution"
+              *ngIf="loginForm.get('phone')?.errors?.['required']"
+            >
+              Phone Number is required.
+            </p>
+          </ion-text>
+        </div>
+        <div class="space">
+          <label for="text" class="username">Address</label>
+          <ion-input
+             class="custom"
+            placeholder="Enter Your Address.."
+            type="text"
+            autocomplete="address"
+            formControlName="address"
+          ></ion-input>
+
+          <ion-text
+            color="danger"
+            *ngIf="loginForm.get('address')?.errors && loginForm.get('address')?.touched">
+            <p
+              class="caution"
+              *ngIf="loginForm.get('phone')?.errors?.['required']">
+              Address is required.
+            </p>
+          </ion-text>
+        </div>
+    
+
+        <div class="btn">
+          <ion-button
+            type="submit"
+            class="form-button"
+            [disabled]="loginForm.invalid"
+            >Send Form</ion-button
+          >
+
+          <div class="account-text">Already Have An Account?<span routerLink="/login" class="login"> Log In</span></div> 
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>

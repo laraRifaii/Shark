@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+  <div class="toolbar">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/home">
+        <ion-img class="back-btn"  src="\..\assets\icons\back Icon.png"></ion-img>
+      </ion-button>
+      <div class="title">Item</div>
+    </ion-buttons>
+   </div>
+   <ion-buttons slot="end">
+    <ion-button>
+      <ion-img src="/../assets/icons/info.png" class='icon'></ion-img>
+    </ion-button>
+    <ion-button>
+      <ion-img src="/../assets/icons/add.png" class="icon"></ion-img>
+    </ion-button>
+    <ion-button>
+      <ion-img class="icon" src='/../assets/icons/Notification.png' style="margin-right:10px;"></ion-img>
+    </ion-button>
+   </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list  lines="inset">
+      <ion-item *ngFor="let item of menuItems" >
+        <ion-label style="color:rgb(83, 83, 83)">
+          
+          {{ item.title }}
+        </ion-label>
+    
+        <ion-buttons slot="end">
+          <ion-button>
+            <ion-img src="/../assets/icons/Edit.png" class="icon"></ion-img>
+          </ion-button>
+          <ion-button>
+            <ion-img src="/../assets/icons/delete.png" class="icon"></ion-img>
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+    </ion-list>
+</ion-content>

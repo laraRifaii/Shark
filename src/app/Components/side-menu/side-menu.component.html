@@ -1,0 +1,61 @@
+<ion-menu contentId="main-content" >
+  
+  <ion-header>
+    <ion-toolbar style="--background: rgba(46, 53, 72, 1); overflow: hidden;">
+      <img class="IMG"
+        src="\..\assets\images\Logo.png"
+        style="width: 180px; height: 60px; margin: 55px 10px 10px 40px"/>
+    </ion-toolbar>
+  </ion-header>
+  
+
+  <ion-content class="ion-padding" style="--background: rgba(46, 53, 72, 1); " scroll="false">
+    
+      <div class='container' (click)="closeMenu()" routerLink="/home">
+        <!-- <img  class="img"
+         src="\..\assets\icons\QR ICON.png"/> -->
+        <span style="font-size: 24px;">Home</span><br>
+      </div>
+
+      <div class='container' (click)="closeMenu()">
+        <!-- <img  class="img" src="\..\assets\icons\QR ICON.png" /> -->
+        <span style="font-size: 24px;">About</span><br>
+      </div>
+
+      <div class='container' (click)="closeMenu()" >
+        <!-- <img class="img"src="\..\assets\icons\QR ICON.png"/> -->
+        <span style="font-size: 24px;">Services</span><br>
+      </div>
+
+      <div class='container' (click)="closeMenu()" >
+        <!-- <img class="img" src="\..\assets\icons\QR ICON.png"/> -->
+        <span style="font-size: 24px;">Client</span><br>
+      </div>
+
+      <div class='container' (click)="closeMenu()">
+        <!-- <img class="img" src="\..\assets\icons\QR ICON.png" /> -->
+        <span style="font-size: 24px;">Other Services</span><br>
+      </div>
+<!-- <ion-list>
+      <ion-item [routerLink]='["/categories"]' (click)="closeMenu()">
+        <ion-label>Categories</ion-label>
+      </ion-item>
+      <ion-item [routerLink]='["/about"]' (click)="closeMenu()">
+        <ion-label>About</ion-label>
+      </ion-item> 
+
+       <ion-item [routerLink]='["/sign-in"]' (click)="closeMenu()">
+        <ion-label>Sign In</ion-label>
+      </ion-item>
+      <ion-item [routerLink]='["/sign-up"]' (click)="closeMenu()">
+        <ion-label>Sign Up</ion-label>
+      </ion-item>
+      <ion-item [routerLink]='["/cart"]' (click)="closeMenu()">
+        <ion-label>Your cart</ion-label>
+      </ion-item>
+      <ion-item [routerLink]='["/your-profile"]' (click)="closeMenu()">
+        <ion-label>Your Profile</ion-label>
+      </ion-item>
+    </ion-list> -->
+  </ion-content>
+</ion-menu>

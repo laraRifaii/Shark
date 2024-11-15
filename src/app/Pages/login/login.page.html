@@ -1,0 +1,84 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+  <div class="toolbar">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/home">
+        <ion-img class="back-btn"  src="\..\assets\icons\back Icon.png"></ion-img>
+      </ion-button>
+      <div class="title">Log In</div>
+    </ion-buttons>
+   </div>
+   <ion-buttons slot="end">
+    <ion-button>
+      <ion-img class="notification" src='/../assets/icons/Notification.png'></ion-img>
+    </ion-button>
+   </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-img src="\..\assets\images\LogIn.jpg"  class="img"></ion-img>
+ 
+  <div class="container">
+     <ion-img class='Qr'src="\..\assets\icons\QR ICON.png"></ion-img>
+     <div class="title">
+       Log In To Your Account
+     </div>
+  </div>
+  <p class="paragraph">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio sequi ea. </p>
+ 
+ 
+  <div class="main-container">
+  <form [formGroup]="loginForm" (ngSubmit)="handleSignUp($event)"  autocomplete="off">
+      
+    <div class="container2">
+        <label for="username" class="username">User Name</label>
+        <ion-input
+            aria-label="Username"
+            placeholder="Enter Your User Name"
+            class="custom"
+            type="text"
+            autocomplete="new-username"
+            formControlName="username"
+            [attr.data-autofill-backup]="'username'"
+          ></ion-input>
+          <ion-text color="danger" *ngIf="loginForm.get('username')?.errors && loginForm.get('username')?.touched">
+            <p class="caution" *ngIf="loginForm.get('username')?.errors?.['required']">Username is required.</p>
+            <p class="caution" *ngIf="loginForm.get('username')?.errors?.['hasSpaces']">Spaces are not allowed in username.</p>
+          </ion-text>
+
+        <div class="password-container">
+
+          <ion-label for="password" class="password" >Password</ion-label>
+          <ion-input
+            aria-label="Password"
+            placeholder="Enter Your Password"
+            class="custom"
+            type="password"
+            autocomplete="new-password"
+            [attr.data-autofill-backup]="'password'"
+            formControlName="password"
+             >
+            <ion-button fill="clear" slot="end" aria-label="Show/hide">
+              <ion-icon slot="icon-only" name="eye" aria-hidden="true" class="eye-icon"></ion-icon>
+            </ion-button>
+          </ion-input>
+          <ion-text color="danger" *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched">
+            <p class="caution" *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</p>
+            <p class="caution" *ngIf="loginForm.get('password')?.errors?.['hasSpaces']">Spaces are not allowed in password.</p>
+          </ion-text>
+        </div>
+      
+        <a href="#" class="forgot-password">Forgot Password?</a>
+        
+        <div class="btn">
+          <ion-button type="submit" class="login-button" [disabled]="loginForm.invalid" routerLink="/home" >Log In</ion-button>
+          
+          <div class="account-text" >Don't Have An Account?</div>
+          <div class="signin-text" routerLink="/signup"  >Please Fill The Form To Get Your Account</div>
+        </div>
+        
+      </div>
+  </form>
+</div>
+</ion-content>

@@ -1,0 +1,54 @@
+
+.container{
+    color: white; 
+    margin-left:20px;
+     margin-bottom:30px;
+}
+.img{
+    width:20px; 
+    height:20px; 
+    margin-right:8px;
+}
+
+
+
+/* Remove scrollbar and inner scroll from ion-content */
+ion-menu ion-content {
+    --overflow: hidden;
+    --ion-safe-area-right: 0;
+  }
+  
+  /* Ensure content takes full width and height */
+  ion-menu ion-content .inner-scroll {
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+  }
+  
+  /* Optional: If you still see a border, remove it */
+  ion-menu ion-header {
+    /* Remove default border */
+    border-bottom: none !important;
+    
+    /* Create custom border effect */
+    background-image: linear-gradient(to left, 
+      white 50%, 
+      rgb(63, 71, 91) 50%
+    );
+    background-size: 100% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    
+    /* Add some padding to make the border visible */
+    padding-bottom: 1px;
+  }
+  
+  /* Ensure no conflicting styles */
+  ion-menu ion-header::after {
+    content: none !important;
+  }
+  
+  /* Additional rule to handle potential conflicts */
+  ion-menu ion-header::before {
+    content: none !important;
+  }

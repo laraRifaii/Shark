@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+  <div class="toolbar">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/home">
+        <ion-img class="back-btn"  src="\..\assets\icons\back Icon.png"></ion-img>
+      </ion-button>
+      <div class="title">Manager</div>
+    </ion-buttons>
+   </div>
+   <ion-buttons slot="end">
+    <ion-button>
+      <ion-img src="/../assets/icons/info.png" style="color:rgba(0, 0, 0, 0.726); width:23px; height:23px;"></ion-img>
+    </ion-button>
+    <ion-button>
+      <ion-img class="notification" src='/../assets/icons/Notification.png'></ion-img>
+    </ion-button>
+   </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2>Provencial Kaslik</h2>
+  <p class="date">Due Date: 20-2-2025</p>
+  <ion-list>
+    <ion-item *ngFor="let item of menuItems" button detail="true" (click)="navigateTo(item.route)">
+      <ion-label style="color:gray">{{ item.title }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
